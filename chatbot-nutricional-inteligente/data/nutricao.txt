@@ -1,0 +1,3 @@
+('What is a balanced diet?', 'A balanced diet includes a variety of foods in the right proportions.'),
+('How much water should I drink daily?', 'It is recommended to drink at least 2 liters of water a day.'),
+('What are the benefits of eating fruits and vegetables?', 'Fruits and vegetables are rich in vitamins, minerals, and fiber, which are essential for good health.');
