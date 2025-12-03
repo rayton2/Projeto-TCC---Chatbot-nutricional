@@ -10,6 +10,9 @@ from langchain_core.runnables import RunnablePassthrough
 # Carrega a chave de API
 load_dotenv()
 
+# ADICIONE ESTA LINHA (Substitua pelo seu código AIza... real):
+os.environ["GOOGLE_API_KEY"] = "AIzaSyCWMto7L_3DImwGxpgYDuZwagavtzhgsNQ"
+
 # Classe wrapper para manter compatibilidade com o app.py (que chama .run())
 class RAGSimples:
     def __init__(self, chain):
