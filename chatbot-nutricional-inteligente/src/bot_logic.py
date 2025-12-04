@@ -1,7 +1,8 @@
 import os
 from dotenv import load_dotenv
 from langchain_community.document_loaders import TextLoader
-from langchain_google_genai import GoogleGenerativeAIEmbeddings, ChatGoogleGenerativeAI
+from langchain_community.embeddings import HuggingFaceEmbeddings 
+from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_community.vectorstores import FAISS
 from langchain_core.prompts import PromptTemplate
 from langchain_core.output_parsers import StrOutputParser
@@ -37,14 +38,17 @@ def criar_cerebro_nutricional():
 
     # 2. Embeddings e Vector Store
     try:
-        embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
+        embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
         vectorstore = FAISS.from_documents(documentos, embeddings)
         retriever = vectorstore.as_retriever()
     except Exception as e:
-        return None, f"Erro no Google/FAISS: {e}"
+        return None, f"Erro ao criar Memória Local: {e}"
 
     # 3. LLM (Gemini)
-    llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", temperature=0.2)
+    try:
+        llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", temperature=0.2)
+    except Exception as e:
+        return None, f"Erro ao conectar no Gemini: {e}"
 
     # 4. Prompt
     template = """

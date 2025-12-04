@@ -6,6 +6,7 @@ faiss-cpu
 python-dotenv
 tiktoken
 langchain-core
+sentence-transformers
 
 # Flask==2.1.2
 # fastapi==0.75.0
