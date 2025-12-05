@@ -1,3 +1,4 @@
+import streamlit as st
 import os
 from dotenv import load_dotenv
 from langchain_community.document_loaders import TextLoader
@@ -10,9 +11,6 @@ from langchain_core.runnables import RunnablePassthrough
 
 # Carrega a chave de API
 load_dotenv()
-
-# ADICIONE ESTA LINHA (Substitua pelo seu código AIza... real):
-os.environ["GOOGLE_API_KEY"] = "AIzaSyCWMto7L_3DImwGxpgYDuZwagavtzhgsNQ"
 
 # Classe wrapper para manter compatibilidade com o app.py (que chama .run())
 class RAGSimples:
