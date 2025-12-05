@@ -46,7 +46,7 @@ def criar_cerebro_nutricional():
 
     # 3. LLM (Gemini)
     try:
-        llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", temperature=0.2)
+        llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash", temperature=0.2)
     except Exception as e:
         return None, f"Erro ao conectar no Gemini: {e}"
 

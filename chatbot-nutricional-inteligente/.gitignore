@@ -1,0 +1,11 @@
+# Ignorar arquivos de ambiente e senhas
+.env
+.venv
+env/
+venv/
+__pycache__/
+*.pyc
+
+# Ignorar banco de dados local (opcional, se quiser que fique só no seu PC)
+*.db
+*.sqlite3
